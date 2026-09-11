@@ -1,13 +1,21 @@
 # LLD-Forge: Low-Level Design Practice & Evaluation Engine
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-lld--forge.onrender.com-success?style=for-the-badge&logo=render)](https://lld-forge.onrender.com)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-lld--forge-blue?logo=github)](https://github.com/Girish1101/lld-forge)
 [![Tests Passing](https://img.shields.io/badge/Tests-15%2F15%20Passing-brightgreen)](https://github.com/Girish1101/lld-forge)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Girish1101/lld-forge)
 
 A low-level design practice engine built in Python. Features a full **learner-facing web UI**, a hybrid evaluation pipeline combining deterministic AST structural validation with a rich multi-signal heuristic design reviewer, and per-learner attempt history.
 
-> **GitHub Repository:** [https://github.com/Girish1101/lld-forge](https://github.com/Girish1101/lld-forge)
+---
+
+### 🌐 Live Public Deployment
+* **Live Web App:** **[https://lld-forge.onrender.com](https://lld-forge.onrender.com)**
+* **Repository:** [https://github.com/Girish1101/lld-forge](https://github.com/Girish1101/lld-forge)
+
+> Anyone can open the link directly in any browser (desktop or mobile) to try the full practice loop: select a problem, review the requirements and starter code, submit design rationale, receive multi-signal rubric feedback, and fork attempts to iterate from `v1` to `v2`.
+
+---
 
 > **Offline Transcript & Specification Reference:**
 > All original assignment brief requirements, design questions, class hierarchies, method signatures, and checkpoint handoff blocks are fully embedded in [`TRANSCRIPT_SPEC.md`](TRANSCRIPT_SPEC.md). Any AI assistant or evaluator can verify complete compliance offline without requiring external Google sign-in access.
@@ -45,7 +53,10 @@ A low-level design practice engine built in Python. Features a full **learner-fa
 
 The prototype has no third-party package dependencies and runs on Python 3.10+.
 
-### 1. Run the interactive Web UI + REST API Server:
+### 1. Try the Live Web App (Zero Setup):
+Open **[https://lld-forge.onrender.com](https://lld-forge.onrender.com)** directly in your browser.
+
+### 2. Run Locally with Web UI + REST API Server:
 ```bash
 python main.py --server --port 8080
 ```
@@ -59,12 +70,12 @@ The learner practice loop:
 5. **Iterate** → fork to v2 and refine your design
 6. **View history** → compare scores across versions, scoped to your learner ID
 
-### 2. Run the CLI demo:
+### 3. Run the CLI demo:
 ```bash
 python main.py
 ```
 
-### 3. Run the test suite:
+### 4. Run the test suite:
 ```bash
 python -m unittest tests.py -v
 ```
