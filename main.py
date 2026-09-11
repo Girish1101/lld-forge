@@ -153,12 +153,17 @@ def start_server(port: int = 8080):
 
 
 if __name__ == "__main__":
+    import os
+    env_port = os.environ.get("PORT")
+    default_port = int(env_port) if env_port else 8080
+    auto_server = bool(env_port)
+
     parser = argparse.ArgumentParser(description="LLD Practice Platform Engine")
-    parser.add_argument("--server", action="store_true", help="Run HTTP REST API server")
-    parser.add_argument("--port", type=int, default=8080, help="Port for REST API server (default: 8080)")
+    parser.add_argument("--server", action="store_true", default=auto_server, help="Run HTTP REST API server")
+    parser.add_argument("--port", type=int, default=default_port, help="Port for REST API server (default: 8080 or $PORT)")
     args = parser.parse_args()
 
-    if args.server:
+    if args.server or auto_server:
         start_server(args.port)
     else:
         run_cli_demo()
